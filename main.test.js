@@ -126,13 +126,19 @@ describe('caesarCipherFunction', () => {
     expect(caesarCipherFunction('hello', [])).toBe('Not a Number');
   });
 
-  // test('Returns "Both inputs are incorrect" for invalid inputs', () => {
-  //   expect(caesarCipherFunction(123, 'three')).toBe(
-  //     'Both inputs are incorrect'
-  //   );
-  // });
+  test('Returns "Must Not Be an Empty String" for empty strings', () => {
+    expect(caesarCipherFunction('', 3)).toBe('Must Not Be an Empty String');
+  });
 
-  // test('Returns "No Content" for empty strings', () => {
-  //   expect(caesarCipherFunction('')).toBe('No Content');
-  // });
+  test('Returns the correct Caesar cipher for valid inputs', () => {
+    expect(caesarCipherFunction('abc', 1)).toBe('bcd');
+    expect(caesarCipherFunction('xyz', 3)).toBe('abc');
+    expect(caesarCipherFunction('Hello, World!', 5)).toBe('Mjqqt, Btwqi!');
+    expect(caesarCipherFunction('123', 2)).toBe('123');
+    expect(caesarCipherFunction('!@#', 4)).toBe('!@#');
+    expect(caesarCipherFunction('abc', -1)).toBe('zab');
+    expect(caesarCipherFunction('Hello', 52)).toBe('Hello');
+    expect(caesarCipherFunction('Hello', -52)).toBe('Hello');
+    expect(caesarCipherFunction('Hello', -52)).toBe('Hello');
+  });
 });
