@@ -126,10 +126,45 @@ function caesarCipherFunction(input, shift) {
     .join('');
 }
 
+function analyzeFunction(array) {
+  // Check if input is an array
+  if (!Array.isArray(array)) {
+    return 'Not an Array';
+  }
+
+  // Array cannot be empty
+  if (array.length === 0) return 'Array Must Not be Empty';
+
+  // Check if all elements are numbers
+  if (!array.every((item) => typeof item === 'number')) {
+    return 'Array Must Contain Only Numbers';
+  }
+  // Average
+  const sum = array.reduce((acc, curr) => acc + curr, 0);
+  const average = sum / array.length;
+
+  // Min
+  const min = Math.min(...array);
+
+  // Max
+  const max = Math.max(...array);
+
+  // Length
+  const length = array.length;
+
+  return {
+    average,
+    min,
+    max,
+    length,
+  };
+}
+
 module.exports = {
   capitalizeFirstChar,
   isLetter,
   reverseString,
   calculator,
   caesarCipherFunction,
+  analyzeFunction,
 };
