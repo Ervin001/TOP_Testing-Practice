@@ -51,7 +51,7 @@ describe('reverseString', () => {
   });
 });
 
-test calculator function
+// test calculator function
 describe('calculator', () => {
   test('Returns "Not a Number" for non-number inputs', () => {
     // Test cases for the calculator function
@@ -113,7 +113,7 @@ describe('calculator', () => {
   });
 });
 
-// Caesar Cipher function 
+// Caesar Cipher function
 describe('caesarCipherFunction', () => {
   test('Returns "Not a String" for non-string inputs', () => {
     expect(caesarCipherFunction(123, 3)).toBe('Not a String');
